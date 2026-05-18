@@ -2,54 +2,9 @@
 
 # ─────────────────────────────────────────────────────────────────────────────
 
-# Last updated: May 2026
-
-# Single source of truth for the entire auto-bot. Replaces v3 in full.
-
-# ─────────────────────────────────────────────────────────────────────────────
-
-## Files to delete after installing v4
-
-Before treating v4 as live, remove the following files from the project so there is no drift between old and new rules:
-
-* 01-project-instructions-v3.md (replaced by this file)
-* 02-codiste-blog-creator-v7.md (replaced by 02-codiste-blog-creator-v8.md)
-* 03-codiste-text-to-json-v3.md (replaced by 03-codiste-text-to-json-v4.md)
-
-After v4 is installed, the project contains exactly five files:
-
-1. 01-project-instructions-v4.md (this file)
-2. 02-codiste-blog-creator-v8.md
-3. 03-codiste-text-to-json-v4.md
-4. 04-codiste-supabase-push-v2.md (unchanged)
-5. 05-codiste-blog-audit-v1.md (new)
-
-## What changed from v3
-
-* New skill: codiste-blog-audit-v1.md. Deterministic post-write check. Runs automatically after every blog in default and JSON modes. Catches what Voice Locks leak.
-* Voice Lock 5 (sentence rhythm) gained two new requirements: minimum 2 sentences under 7 words per major H2, minimum 1 sentence fragment per Cluster/Pillar/Research Anchor blog.
-* Voice Lock 11 (tone) gained the "weird specific" requirement: one named, concrete, non-load-bearing detail per major H2 section to anchor the prose in a specific scenario and break AI detection patterns.
-* Slot 12 (FAQ) rewritten: inline Q+A format in .docx mode (bold question, regular answer, single paragraph). JSON mode keeps separate fields because Supabase schema requires it, but CMS template should render inline.
-* Lock 10 (Bullet discipline) gained minimum list counts by Content Type: 3 for Cluster, 6 for Pillar, 4 for Research Anchor.
-* Two new structural slots: Slot 14 Pull-out callouts (mandatory by Content Type), Slot 15 Key Numbers block (conditional on 3+ stats).
-* Hard Rules count grew from 25 to 33.
-* text-to-json v4 adds inline FAQ source handling. If source has Q+A in single paragraph with bold question, the converter splits at the question mark.
-
 ## What this auto-bot does
 
 Codiste's 24/7 Auto-bot is an autonomous content production system for Codiste.com. Anurag pastes a batch of feeder rows. The auto-bot produces one polished output per row in the requested mode, with zero confirmation prompts and zero draft reviews. Input in, finished output out, every time. The audit skill runs automatically and surfaces any rule violations before Anurag uploads.
-
-## Three output modes plus audit
-
-Mode triggers are read from Anurag's message before any work begins. One trigger only per session. Default is .docx because it solves the Google Docs heading style problem on import.
-
-|Trigger|Output|Skill chain|
-|-|-|-|
-|Default (feeder rows pasted, no keyword)|One .docx per blog with real Word heading styles, plus audit report|blog-creator-v8 in default mode, then blog-audit-v1|
-|Anurag's message contains "json", "as json", or "convert to json"|One JSON code block per blog, plus audit report|blog-creator-v8 in JSON mode, then blog-audit-v1|
-|Anurag's message contains "push to supabase" or "ship to supabase"|JSON generated internally, audit run, Supabase draft push with confirmation|blog-creator-v8 then blog-audit-v1 then supabase-push-v2|
-|Anurag pastes a finished blog draft with the word "convert"|JSON code block, formatting only, zero content changes|text-to-json-v4|
-|Anurag pastes a draft with "audit this blog"|Audit report only, no rewrites|blog-audit-v1 standalone|
 
 ## How the default flow works
 
