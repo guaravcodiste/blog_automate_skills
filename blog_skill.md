@@ -79,6 +79,7 @@ cutting-edge, revolutionary, seamless, robust, in today's world, leverage (verb)
 - No sentence over 25 words. Split at natural clause break.
 - After any sentence over 18 words, next sentence must be under 12 words.
 - No two consecutive sentences start with the same word.
+- No three consecutive sentences of similar length.
 - Minimum 2 sentences under 7 words per major H2 (body prose only, not bullets or headings).
 - Minimum 1 sentence fragment per Cluster, Pillar, Research Anchor (not in bullets, FAQ, CTA, or direct-answer box).
 
@@ -92,6 +93,7 @@ cutting-edge, revolutionary, seamless, robust, in today's world, leverage (verb)
 - Sentence 1: ICP's specific daily pain. Never a generic industry statement.
 - Primary Keyword appears in hook prose within first 100 words.
 - MoFU: names the cost of the wrong partner. ToFU: validates the problem. BoFU: frames the decision moment.
+- Use a real proof/stat if available. Realistic scenario if none available. Never invent a labeled stat.
 
 ### Lock 8: CTA Constraints
 - Supporting lines: hard cap 18 words.
@@ -136,7 +138,7 @@ cutting-edge, revolutionary, seamless, robust, in today's world, leverage (verb)
 
 **Slot 5: Solution H2** — Category-level solution. No Codiste mention yet.
 
-**Slot 6: Proof H2** — MoFU: before/after with specific measurable outcomes. Always vertical-specific and ICP-specific.
+**Slot 6: Proof H2** — ToFU: industry context + anonymized scenario. MoFU: before/after with specific measurable outcomes. BoFU: direct comparison or decision framework. Always vertical-specific and ICP-specific.
 
 **Slot 7: Comparison Table (mandatory, every Cluster)** — H3 title (keyword-rich) + one intro sentence between H3 and table + real table.
 
@@ -225,7 +227,7 @@ Font: Arial. Page: US Letter. 1-inch margins.
 No `img` field. No `seo.image`. `status` always `"draft"`.
 
 ### Slice Types
-- **content**: `items: [{}]`. Block types: `heading2`, `heading3`, `paragraph`, `list-item`, `o-list-item`. Every H2/H3 carries `anchor_id`. `heading2` always in its own slice, never shared with paragraphs.
+- **content**: `items: [{}]`. Block types: `heading2`, `heading3`, `paragraph`, `list-item`, `o-list-item`. Every H2/H3 carries `anchor_id`. Strong span on all heading blocks: `{"start": 0, "end": <text.length>, "type": "strong"}`. Bold span on direct-answer box and pull-out callout paragraphs: same span structure. `heading2` always in its own slice, never shared with paragraphs. `heading3` may share a slice with following paragraphs.
 - **cta_button**: Title paragraph + name + link. Button name: "Book a Call" or "Contact Us" only.
 - **faqs**: `items: [{question, answer}]`. Indices 0–4 visible, 5–9 schema-only.
 - **table**: `primary.blog_table.content` array. Always preceded by its own content slice with H3 + intro paragraph.
@@ -268,9 +270,9 @@ FLAGS (only if applicable):
 
 ## AUDIT CHECKLIST
 
-Runs after every blog. Report violations grouped by category. Each violation cites: category, rule, location, fix direction. "(clean)" when category had checks but zero violations. Keyword Integration block appears in every run — low Z is never a violation.
+Runs after every blog. Report violations grouped by category. Each violation cites: category, rule, location, fix direction. "(clean)" when category had checks but zero violations. Keyword Integration block appears in every run — low Z is never a violation. If a check cannot run (missing data, malformed JSON, unparseable file): report as violation under "AUDIT INFRASTRUCTURE." Audit never fails silently.
 
-**Standalone inference** (if feeder not provided): Funnel from CTA pattern ("Contact Us" = ToFU, "Book a Call" = MoFU/BoFU). Content Type from word count (under 1,600 = Cluster, 4,000+ = Pillar, under 350 = TL Post). Skip Category 8 if no keyword pool.
+**Standalone inference** (if feeder not provided): Funnel from CTA pattern ("Contact Us" = ToFU, "Book a Call" = MoFU/BoFU). Content Type from word count (under 1,600 = Cluster, 4,000+ = Pillar, under 350 = TL Post). Skip Category 8 if no keyword pool — note "feeder pool not provided, keyword count skipped." Standalone output uses same format without "[BLOG N]" prefix.
 
 ### Category 1: Voice Locks
 Zero em dashes anywhere | Zero colons in H1/H2/H3 | Zero semicolons in H1/H2/H3 (exception: "TL;DR") | H1 ≤60 chars OR ≤10 words | H1 contains Primary Keyword | Minimum 2 H2s question-framed | Zero never-use list matches | No sentence over 25 words | After sentence over 18 words, next under 12 words | No two consecutive sentences start same word | Minimum 2 sentences under 7 words per major H2 (body prose only) | Minimum 1 sentence fragment in body (Cluster/Pillar/Research Anchor) | One weird specific per major H2 [approximate] | Zero semicolons in body prose | Zero "per cent" instances
