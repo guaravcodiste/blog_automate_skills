@@ -1,4 +1,4 @@
-# SKILL: codiste-text-to-json-v4.md
+# SKILL: codiste-text-to-json.md
 # ─────────────────────────────────────────────────────────────────────────────
 # Replaces v3 in full. Shares JSON schema with blog-creator-v8.
 # Handles finalized blog text → JSON conversion ONLY.
