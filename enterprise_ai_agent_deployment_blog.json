@@ -19,353 +19,353 @@
   },
   "slices": [
     {
-      "id": "content$19104c9e-0358-494c-8643-55db98ec9029",
+      "id": "content$bff086cc-19f7-4d86-adae-515c4e9f9eb0",
       "slice_type": "content",
       "slice_label": null,
-      "primary": {},
+      "primary": {
+        "content": [
+          {
+            "type": "paragraph",
+            "text": "CTOs at regulated firms already know enterprise AI agent deployment works in controlled environments. The real decision is which architecture survives a compliance audit. The wrong rollout does not fail at launch. It fails six months later, in writing, at the audit.",
+            "spans": [],
+            "direction": "ltr"
+          }
+        ]
+      },
       "items": [
-        {
-          "blocks": [
-            {
-              "type": "paragraph",
-              "text": "CTOs at regulated firms already know enterprise AI agent deployment works in controlled environments. The real decision is which architecture survives a compliance audit. The wrong rollout does not fail at launch. It fails six months later, in writing, at the audit.",
-              "spans": [],
-              "direction": "ltr"
-            }
-          ]
-        }
+        {}
       ]
     },
     {
-      "id": "content$c948e7ea-62bf-4af4-ba6d-a67c40854dfd",
+      "id": "content$642dc529-6869-46e4-bdb9-1fac01b2024d",
       "slice_type": "content",
       "slice_label": null,
-      "primary": {},
+      "primary": {
+        "content": [
+          {
+            "type": "paragraph",
+            "text": "Enterprise AI agent deployment in regulated industries requires governance, access controls, and audit logging embedded in the architecture before production launch. Firms that treat explainability and agent-level role-based permissions as engineering requirements reach production readiness in 90 to 120 days. Governance built in is faster and cheaper than governance retrofitted.",
+            "spans": [
+              {
+                "start": 0,
+                "end": 381,
+                "type": "strong"
+              }
+            ],
+            "direction": "ltr"
+          }
+        ]
+      },
       "items": [
-        {
-          "blocks": [
-            {
-              "type": "paragraph",
-              "text": "Enterprise AI agent deployment in regulated industries requires governance, access controls, and audit logging embedded in the architecture before production launch. Firms that treat explainability and agent-level role-based permissions as engineering requirements reach production readiness in 90 to 120 days. Governance built in is faster and cheaper than governance retrofitted.",
-              "spans": [
-                {
-                  "start": 0,
-                  "end": 381,
-                  "type": "strong"
-                }
-              ],
-              "direction": "ltr"
-            }
-          ]
-        }
+        {}
       ]
     },
     {
-      "id": "content$8681ba9c-21e3-48a9-a054-46f51a1c27fb",
+      "id": "content$19c9d21b-77f7-4553-904b-93e3b0173a18",
       "slice_type": "content",
       "slice_label": null,
-      "primary": {},
+      "primary": {
+        "content": [
+          {
+            "type": "heading2",
+            "text": "What Goes Wrong When AI Agents Reach Production Without Governance",
+            "spans": [
+              {
+                "start": 0,
+                "end": 66,
+                "type": "strong"
+              }
+            ],
+            "direction": "ltr",
+            "anchor_id": "what-goes-wrong-when-ai-agents-reach-production-without-governance"
+          }
+        ]
+      },
       "items": [
-        {
-          "blocks": [
-            {
-              "type": "heading2",
-              "text": "What Goes Wrong When AI Agents Reach Production Without Governance",
-              "spans": [
-                {
-                  "start": 0,
-                  "end": 66,
-                  "type": "strong"
-                }
-              ],
-              "direction": "ltr",
-              "anchor_id": "what-goes-wrong-when-ai-agents-reach-production-without-governance"
-            }
-          ]
-        }
+        {}
       ]
     },
     {
-      "id": "content$83c0db58-ab6e-4233-85c0-181c2b7f05d2",
+      "id": "content$a1a034f5-59e7-4a9a-b4b6-93d9273997c5",
       "slice_type": "content",
       "slice_label": null,
-      "primary": {},
+      "primary": {
+        "content": [
+          {
+            "type": "paragraph",
+            "text": "When an AI agent queries a production database with undefined permissions, the consequences are predictable. The agent acts outside scope. The compliance team finds out at the next audit.",
+            "spans": [],
+            "direction": "ltr"
+          },
+          {
+            "type": "paragraph",
+            "text": "Sixty-one percent of enterprise AI incidents in regulated sectors traced to insufficient access controls at deployment (source: Financial Stability Board, 2025). That is a governance architecture problem. Under US frameworks including SOX and GLBA, undocumented AI agent access to regulated records is a direct compliance violation. Post-production remediation costs 4.2 times more than building controls in from the start (source: Gartner, 2025).",
+            "spans": [],
+            "direction": "ltr"
+          },
+          {
+            "type": "paragraph",
+            "text": "The deployment team inherited a permission model from the 2019 integration playbook. That model breaks the moment an agent queries a restricted table for a downstream workflow decision. The failure stays invisible until an auditor requests the access log. Months of remediation. For one ungoverned query.",
+            "spans": [],
+            "direction": "ltr"
+          },
+          {
+            "type": "paragraph",
+            "text": "Production readiness is not about throughput. It is about traceability.",
+            "spans": [],
+            "direction": "ltr"
+          }
+        ]
+      },
       "items": [
-        {
-          "blocks": [
-            {
-              "type": "paragraph",
-              "text": "When an AI agent queries a production database with undefined permissions, the consequences are predictable. The agent acts outside scope. The compliance team finds out at the next audit.",
-              "spans": [],
-              "direction": "ltr"
-            },
-            {
-              "type": "paragraph",
-              "text": "Sixty-one percent of enterprise AI incidents in regulated sectors traced to insufficient access controls at deployment (source: Financial Stability Board, 2025). That is a governance architecture problem. Under US frameworks including SOX and GLBA, undocumented AI agent access to regulated records is a direct compliance violation. Post-production remediation costs 4.2 times more than building controls in from the start (source: Gartner, 2025).",
-              "spans": [],
-              "direction": "ltr"
-            },
-            {
-              "type": "paragraph",
-              "text": "The deployment team inherited a permission model from the 2019 integration playbook. That model breaks the moment an agent queries a restricted table for a downstream workflow decision. The failure stays invisible until an auditor requests the access log. Months of remediation. For one ungoverned query.",
-              "spans": [],
-              "direction": "ltr"
-            },
-            {
-              "type": "paragraph",
-              "text": "Production readiness is not about throughput. It is about traceability.",
-              "spans": [],
-              "direction": "ltr"
-            }
-          ]
-        }
+        {}
       ]
     },
     {
-      "id": "content$32ebf1be-1b5a-4ef2-99a4-0657e6d9ca95",
+      "id": "content$32d2378e-d7b2-4edf-beb7-2c6b7a5f24dc",
       "slice_type": "content",
       "slice_label": null,
-      "primary": {},
+      "primary": {
+        "content": [
+          {
+            "type": "heading2",
+            "text": "How Governed AI Agent Deployment Eliminates Audit Risk",
+            "spans": [
+              {
+                "start": 0,
+                "end": 54,
+                "type": "strong"
+              }
+            ],
+            "direction": "ltr",
+            "anchor_id": "how-governed-ai-agent-deployment-eliminates-audit-risk"
+          }
+        ]
+      },
       "items": [
-        {
-          "blocks": [
-            {
-              "type": "heading2",
-              "text": "How Governed AI Agent Deployment Eliminates Audit Risk",
-              "spans": [
-                {
-                  "start": 0,
-                  "end": 54,
-                  "type": "strong"
-                }
-              ],
-              "direction": "ltr",
-              "anchor_id": "how-governed-ai-agent-deployment-eliminates-audit-risk"
-            }
-          ]
-        }
+        {}
       ]
     },
     {
-      "id": "content$b8166b64-45b6-463b-8481-e0851ff1d645",
+      "id": "content$43cb273a-6e7c-4db9-b9e0-370d77b6dccb",
       "slice_type": "content",
       "slice_label": null,
-      "primary": {},
+      "primary": {
+        "content": [
+          {
+            "type": "paragraph",
+            "text": "Five layers define a compliant AI rollout in a regulated environment. Each is an engineering decision, not a compliance task appended after launch.",
+            "spans": [],
+            "direction": "ltr"
+          },
+          {
+            "type": "paragraph",
+            "text": "Layer one is model isolation: each agent runs in a scoped container with no cross-instance data access. Layer two is agent-level role-based access control applied at instantiation, not inherited from the calling user. Layer three is an explainability wrapper that captures the decision path for every action touching protected data. The agent that queried the Tier-2 sanctions list without a recorded decision path in a 2024 RegTech audit is the reason layers four and five exist: immutable audit logging and compliance-threshold monitoring.",
+            "spans": [],
+            "direction": "ltr"
+          },
+          {
+            "type": "paragraph",
+            "text": "These five layers enforce the following at the point of action:",
+            "spans": [],
+            "direction": "ltr"
+          },
+          {
+            "type": "list-item",
+            "text": "Agent-level RBAC applies the principle of least privilege at action time, not at the application layer.",
+            "spans": [],
+            "direction": "ltr"
+          },
+          {
+            "type": "list-item",
+            "text": "Explainability wrappers produce decision logs regulators read without interpreting vendor schema.",
+            "spans": [],
+            "direction": "ltr"
+          },
+          {
+            "type": "list-item",
+            "text": "Immutable audit trails in standard formats reduce inquiry response time during regulatory review.",
+            "spans": [],
+            "direction": "ltr"
+          },
+          {
+            "type": "list-item",
+            "text": "Real-time monitoring tied to compliance SLAs catches access anomalies before they reach reportable threshold.",
+            "spans": [],
+            "direction": "ltr"
+          },
+          {
+            "type": "list-item",
+            "text": "AI change management workflows trigger re-validation whenever underlying data models shift.",
+            "spans": [],
+            "direction": "ltr"
+          },
+          {
+            "type": "paragraph",
+            "text": "Build these layers in sequence. Each one is a go/no-go checkpoint before the next stage of deployment begins.",
+            "spans": [],
+            "direction": "ltr"
+          }
+        ]
+      },
       "items": [
-        {
-          "blocks": [
-            {
-              "type": "paragraph",
-              "text": "Five layers define a compliant AI rollout in a regulated environment. Each is an engineering decision, not a compliance task appended after launch.",
-              "spans": [],
-              "direction": "ltr"
-            },
-            {
-              "type": "paragraph",
-              "text": "Layer one is model isolation: each agent runs in a scoped container with no cross-instance data access. Layer two is agent-level role-based access control applied at instantiation, not inherited from the calling user. Layer three is an explainability wrapper that captures the decision path for every action touching protected data. The agent that queried the Tier-2 sanctions list without a recorded decision path in a 2024 RegTech audit is the reason layers four and five exist: immutable audit logging and compliance-threshold monitoring.",
-              "spans": [],
-              "direction": "ltr"
-            },
-            {
-              "type": "paragraph",
-              "text": "These five layers enforce the following at the point of action:",
-              "spans": [],
-              "direction": "ltr"
-            },
-            {
-              "type": "list-item",
-              "text": "Agent-level RBAC applies the principle of least privilege at action time, not at the application layer.",
-              "spans": [],
-              "direction": "ltr"
-            },
-            {
-              "type": "list-item",
-              "text": "Explainability wrappers produce decision logs regulators read without interpreting vendor schema.",
-              "spans": [],
-              "direction": "ltr"
-            },
-            {
-              "type": "list-item",
-              "text": "Immutable audit trails in standard formats reduce inquiry response time during regulatory review.",
-              "spans": [],
-              "direction": "ltr"
-            },
-            {
-              "type": "list-item",
-              "text": "Real-time monitoring tied to compliance SLAs catches access anomalies before they reach reportable threshold.",
-              "spans": [],
-              "direction": "ltr"
-            },
-            {
-              "type": "list-item",
-              "text": "AI change management workflows trigger re-validation whenever underlying data models shift.",
-              "spans": [],
-              "direction": "ltr"
-            },
-            {
-              "type": "paragraph",
-              "text": "Build these layers in sequence. Each one is a go/no-go checkpoint before the next stage of deployment begins.",
-              "spans": [],
-              "direction": "ltr"
-            }
-          ]
-        }
+        {}
       ]
     },
     {
-      "id": "content$e2f20848-d296-40f7-b4c7-c9a711ef1211",
+      "id": "content$9c12457b-8660-47ee-bbbb-ca9ce47d3caa",
       "slice_type": "content",
       "slice_label": null,
-      "primary": {},
+      "primary": {
+        "content": [
+          {
+            "type": "heading2",
+            "text": "Why the First Governed Rollout Defines Every AI Deployment After It",
+            "spans": [
+              {
+                "start": 0,
+                "end": 67,
+                "type": "strong"
+              }
+            ],
+            "direction": "ltr",
+            "anchor_id": "why-the-first-governed-rollout-defines-every-ai-deployment-after-it"
+          }
+        ]
+      },
       "items": [
-        {
-          "blocks": [
-            {
-              "type": "heading2",
-              "text": "Why the First Governed Rollout Defines Every AI Deployment After It",
-              "spans": [
-                {
-                  "start": 0,
-                  "end": 67,
-                  "type": "strong"
-                }
-              ],
-              "direction": "ltr",
-              "anchor_id": "why-the-first-governed-rollout-defines-every-ai-deployment-after-it"
-            }
-          ]
-        }
+        {}
       ]
     },
     {
-      "id": "content$ab49641b-a055-4c17-b9a5-0f6cc11357ca",
+      "id": "content$6e98a81b-a938-4978-a671-4c23d67cb96a",
       "slice_type": "content",
       "slice_label": null,
-      "primary": {},
+      "primary": {
+        "content": [
+          {
+            "type": "paragraph",
+            "text": "The difference between a governed and an ad-hoc enterprise AI implementation is not visible on launch day. It surfaces at the first audit, the first incident, or the first request to expand the agent’s scope.",
+            "spans": [],
+            "direction": "ltr"
+          },
+          {
+            "type": "paragraph",
+            "text": "Regulated enterprises with structured AI deployment playbooks completed subsequent AI agent rollouts 58 percent faster than firms without one (source: RegTech Analyst, 2025). The governance architecture built for the first rollout becomes the template for every rollout that follows. Governance scales only when the architecture was designed to scale.",
+            "spans": [],
+            "direction": "ltr"
+          },
+          {
+            "type": "paragraph",
+            "text": "A governed enterprise AI implementation gives a CTO three outputs an ad-hoc rollout cannot deliver:",
+            "spans": [],
+            "direction": "ltr"
+          },
+          {
+            "type": "list-item",
+            "text": "A documented chain of custody for every agent action touching regulated data.",
+            "spans": [],
+            "direction": "ltr"
+          },
+          {
+            "type": "list-item",
+            "text": "A repeatable validation process that survives model updates and data schema changes.",
+            "spans": [],
+            "direction": "ltr"
+          },
+          {
+            "type": "list-item",
+            "text": "An architecture that extends to additional regulated use cases without rework.",
+            "spans": [],
+            "direction": "ltr"
+          },
+          {
+            "type": "paragraph",
+            "text": "Each output is a direct answer to an audit question. Build for the audit and the audit stops being a risk event.",
+            "spans": [],
+            "direction": "ltr"
+          },
+          {
+            "type": "paragraph",
+            "text": "Regulated enterprises use this framework to evaluate their current deployment approach:",
+            "spans": [],
+            "direction": "ltr"
+          },
+          {
+            "type": "list-item",
+            "text": "Access control: agent-level RBAC at instantiation, or inherited from the application layer.",
+            "spans": [],
+            "direction": "ltr"
+          },
+          {
+            "type": "list-item",
+            "text": "Audit trail: immutable and regulatory-readable, or log-level with manual parsing required.",
+            "spans": [],
+            "direction": "ltr"
+          },
+          {
+            "type": "list-item",
+            "text": "Explainability: decision path captured per agent action, or not available by default.",
+            "spans": [],
+            "direction": "ltr"
+          },
+          {
+            "type": "list-item",
+            "text": "Compliance readiness: built in before launch, or remediated after the audit.",
+            "spans": [],
+            "direction": "ltr"
+          },
+          {
+            "type": "list-item",
+            "text": "Second rollout speed: measurably faster than the first, or similar effort repeated.",
+            "spans": [],
+            "direction": "ltr"
+          },
+          {
+            "type": "paragraph",
+            "text": "A governed architecture produces built-in answers across all five. An ad-hoc rollout produces remediation answers.",
+            "spans": [],
+            "direction": "ltr"
+          }
+        ]
+      },
       "items": [
-        {
-          "blocks": [
-            {
-              "type": "paragraph",
-              "text": "The difference between a governed and an ad-hoc enterprise AI implementation is not visible on launch day. It surfaces at the first audit, the first incident, or the first request to expand the agent’s scope.",
-              "spans": [],
-              "direction": "ltr"
-            },
-            {
-              "type": "paragraph",
-              "text": "Regulated enterprises with structured AI deployment playbooks completed subsequent AI agent rollouts 58 percent faster than firms without one (source: RegTech Analyst, 2025). The governance architecture built for the first rollout becomes the template for every rollout that follows. Governance scales only when the architecture was designed to scale.",
-              "spans": [],
-              "direction": "ltr"
-            },
-            {
-              "type": "paragraph",
-              "text": "A governed enterprise AI implementation gives a CTO three outputs an ad-hoc rollout cannot deliver:",
-              "spans": [],
-              "direction": "ltr"
-            },
-            {
-              "type": "list-item",
-              "text": "A documented chain of custody for every agent action touching regulated data.",
-              "spans": [],
-              "direction": "ltr"
-            },
-            {
-              "type": "list-item",
-              "text": "A repeatable validation process that survives model updates and data schema changes.",
-              "spans": [],
-              "direction": "ltr"
-            },
-            {
-              "type": "list-item",
-              "text": "An architecture that extends to additional regulated use cases without rework.",
-              "spans": [],
-              "direction": "ltr"
-            },
-            {
-              "type": "paragraph",
-              "text": "Each output is a direct answer to an audit question. Build for the audit and the audit stops being a risk event.",
-              "spans": [],
-              "direction": "ltr"
-            },
-            {
-              "type": "paragraph",
-              "text": "Regulated enterprises use this framework to evaluate their current deployment approach:",
-              "spans": [],
-              "direction": "ltr"
-            },
-            {
-              "type": "list-item",
-              "text": "Access control: agent-level RBAC at instantiation, or inherited from the application layer.",
-              "spans": [],
-              "direction": "ltr"
-            },
-            {
-              "type": "list-item",
-              "text": "Audit trail: immutable and regulatory-readable, or log-level with manual parsing required.",
-              "spans": [],
-              "direction": "ltr"
-            },
-            {
-              "type": "list-item",
-              "text": "Explainability: decision path captured per agent action, or not available by default.",
-              "spans": [],
-              "direction": "ltr"
-            },
-            {
-              "type": "list-item",
-              "text": "Compliance readiness: built in before launch, or remediated after the audit.",
-              "spans": [],
-              "direction": "ltr"
-            },
-            {
-              "type": "list-item",
-              "text": "Second rollout speed: measurably faster than the first, or similar effort repeated.",
-              "spans": [],
-              "direction": "ltr"
-            },
-            {
-              "type": "paragraph",
-              "text": "A governed architecture produces built-in answers across all five. An ad-hoc rollout produces remediation answers.",
-              "spans": [],
-              "direction": "ltr"
-            }
-          ]
-        }
+        {}
       ]
     },
     {
-      "id": "content$51548757-d4b3-4392-a27c-60e761c1524b",
+      "id": "content$833abc35-a49e-49d5-9fa7-3390c3f5ffc4",
       "slice_type": "content",
       "slice_label": null,
-      "primary": {},
+      "primary": {
+        "content": [
+          {
+            "type": "heading3",
+            "text": "Governed vs. Ad-Hoc AI Agent Deployment in Regulated Industries",
+            "spans": [
+              {
+                "start": 0,
+                "end": 63,
+                "type": "strong"
+              }
+            ],
+            "direction": "ltr",
+            "anchor_id": "governed-vs-ad-hoc-ai-agent-deployment-in-regulated-industries"
+          },
+          {
+            "type": "paragraph",
+            "text": "A governed deployment treats every compliance requirement as a build input, not a post-launch correction.",
+            "spans": [],
+            "direction": "ltr"
+          }
+        ]
+      },
       "items": [
-        {
-          "blocks": [
-            {
-              "type": "heading3",
-              "text": "Governed vs. Ad-Hoc AI Agent Deployment in Regulated Industries",
-              "spans": [
-                {
-                  "start": 0,
-                  "end": 63,
-                  "type": "strong"
-                }
-              ],
-              "direction": "ltr",
-              "anchor_id": "governed-vs-ad-hoc-ai-agent-deployment-in-regulated-industries"
-            },
-            {
-              "type": "paragraph",
-              "text": "A governed deployment treats every compliance requirement as a build input, not a post-launch correction.",
-              "spans": [],
-              "direction": "ltr"
-            }
-          ]
-        }
+        {}
       ]
     },
     {
-      "id": "table$0a4a1bfb-13a4-4dd8-a2de-298f09b3ee43",
+      "id": "table$1027e725-3640-47dd-9657-8a4413ff4c93",
       "slice_type": "table",
       "slice_label": null,
       "primary": {
@@ -461,56 +461,56 @@
       "items": []
     },
     {
-      "id": "content$1f7e0069-8a5d-4521-8276-838e1f813693",
+      "id": "content$181fcc32-b461-446c-bb8f-88987618449b",
       "slice_type": "content",
       "slice_label": null,
-      "primary": {},
+      "primary": {
+        "content": [
+          {
+            "type": "paragraph",
+            "text": "Governed AI agent deployment turns compliance requirements into build inputs before a single production query runs.",
+            "spans": [
+              {
+                "start": 0,
+                "end": 115,
+                "type": "strong"
+              }
+            ],
+            "direction": "ltr"
+          }
+        ]
+      },
       "items": [
-        {
-          "blocks": [
-            {
-              "type": "paragraph",
-              "text": "Governed AI agent deployment turns compliance requirements into build inputs before a single production query runs.",
-              "spans": [
-                {
-                  "start": 0,
-                  "end": 115,
-                  "type": "strong"
-                }
-              ],
-              "direction": "ltr"
-            }
-          ]
-        }
+        {}
       ]
     },
     {
-      "id": "content$753c7f2e-cf65-43f9-bbc8-59f6cb8d0faf",
+      "id": "content$3777c119-7e0a-492c-8a49-ba722fa89b57",
       "slice_type": "content",
       "slice_label": null,
-      "primary": {},
+      "primary": {
+        "content": [
+          {
+            "type": "heading3",
+            "text": "Key Numbers",
+            "spans": [
+              {
+                "start": 0,
+                "end": 11,
+                "type": "strong"
+              }
+            ],
+            "direction": "ltr",
+            "anchor_id": "key-numbers"
+          }
+        ]
+      },
       "items": [
-        {
-          "blocks": [
-            {
-              "type": "heading3",
-              "text": "Key Numbers",
-              "spans": [
-                {
-                  "start": 0,
-                  "end": 11,
-                  "type": "strong"
-                }
-              ],
-              "direction": "ltr",
-              "anchor_id": "key-numbers"
-            }
-          ]
-        }
+        {}
       ]
     },
     {
-      "id": "table$4f7a6a73-2dce-463a-baeb-d0ca45f43c23",
+      "id": "table$3ac8b152-8e48-490b-bb80-193d4ef27efc",
       "slice_type": "table",
       "slice_label": null,
       "primary": {
@@ -552,56 +552,56 @@
       "items": []
     },
     {
-      "id": "content$6cdd2ee7-02ff-473d-bbad-7b42e1ad78dc",
+      "id": "content$2ebd0682-f60a-4307-bdfb-710b098f4fe6",
       "slice_type": "content",
       "slice_label": null,
-      "primary": {},
+      "primary": {
+        "content": [
+          {
+            "type": "paragraph",
+            "text": "Codiste has delivered enterprise AI agent deployment for financial services, RegTech, and insurance firms, working directly with engineering and compliance teams to build governance into the architecture before production launch. The delivery model covers agent-level access control design, explainability layer implementation, audit trail architecture, and compliance validation checkpoints at each deployment stage. CTOs targeting production-ready AI agents on a defined schedule get a technical roadmap that closes the audit gap before it opens.",
+            "spans": [],
+            "direction": "ltr"
+          }
+        ]
+      },
       "items": [
-        {
-          "blocks": [
-            {
-              "type": "paragraph",
-              "text": "Codiste has delivered enterprise AI agent deployment for financial services, RegTech, and insurance firms, working directly with engineering and compliance teams to build governance into the architecture before production launch. The delivery model covers agent-level access control design, explainability layer implementation, audit trail architecture, and compliance validation checkpoints at each deployment stage. CTOs targeting production-ready AI agents on a defined schedule get a technical roadmap that closes the audit gap before it opens.",
-              "spans": [],
-              "direction": "ltr"
-            }
-          ]
-        }
+        {}
       ]
     },
     {
-      "id": "content$bc1588f8-ee3a-470e-aabe-539142a3af17",
+      "id": "content$1b6f7786-8c64-4615-aaaa-54475d237ed3",
       "slice_type": "content",
       "slice_label": null,
-      "primary": {},
+      "primary": {
+        "content": [
+          {
+            "type": "heading3",
+            "text": "Ready to Move Your AI Agents from Experimentation into Production?",
+            "spans": [
+              {
+                "start": 0,
+                "end": 66,
+                "type": "strong"
+              }
+            ],
+            "direction": "ltr",
+            "anchor_id": "ready-to-move-your-ai-agents-from-experimentation-into-production"
+          },
+          {
+            "type": "paragraph",
+            "text": "A governed deployment is an engineering decision made before launch, not a remediation task after go-live.",
+            "spans": [],
+            "direction": "ltr"
+          }
+        ]
+      },
       "items": [
-        {
-          "blocks": [
-            {
-              "type": "heading3",
-              "text": "Ready to Move Your AI Agents from Experimentation into Production?",
-              "spans": [
-                {
-                  "start": 0,
-                  "end": 66,
-                  "type": "strong"
-                }
-              ],
-              "direction": "ltr",
-              "anchor_id": "ready-to-move-your-ai-agents-from-experimentation-into-production"
-            },
-            {
-              "type": "paragraph",
-              "text": "A governed deployment is an engineering decision made before launch, not a remediation task after go-live.",
-              "spans": [],
-              "direction": "ltr"
-            }
-          ]
-        }
+        {}
       ]
     },
     {
-      "id": "cta_button$4f281277-e237-46b1-b6f8-d23111918fde",
+      "id": "cta_button$71182875-12ec-478e-80c3-c55f02f580fa",
       "slice_type": "cta_button",
       "slice_label": null,
       "primary": {
@@ -622,32 +622,32 @@
       "items": []
     },
     {
-      "id": "content$4f10950a-8d86-412d-9bcd-1dbb68e66ac2",
+      "id": "content$35e375cb-60be-4a92-89e4-83d67841c00b",
       "slice_type": "content",
       "slice_label": null,
-      "primary": {},
+      "primary": {
+        "content": [
+          {
+            "type": "heading2",
+            "text": "FAQ",
+            "spans": [
+              {
+                "start": 0,
+                "end": 3,
+                "type": "strong"
+              }
+            ],
+            "direction": "ltr",
+            "anchor_id": "faq"
+          }
+        ]
+      },
       "items": [
-        {
-          "blocks": [
-            {
-              "type": "heading2",
-              "text": "FAQ",
-              "spans": [
-                {
-                  "start": 0,
-                  "end": 3,
-                  "type": "strong"
-                }
-              ],
-              "direction": "ltr",
-              "anchor_id": "faq"
-            }
-          ]
-        }
+        {}
       ]
     },
     {
-      "id": "faqs$3d2967a7-a1fb-43f3-9d31-af10b81924c5",
+      "id": "faqs$cfaeabbb-f83d-4691-b334-a0c6460ef4fc",
       "slice_type": "faqs",
       "slice_label": null,
       "primary": {},
@@ -695,21 +695,21 @@
       ]
     },
     {
-      "id": "content$82c85a52-7564-4bda-9922-6678abb77adc",
+      "id": "content$eafa14a5-4f8b-46e1-a68f-a64e4ebb6bbe",
       "slice_type": "content",
       "slice_label": null,
-      "primary": {},
+      "primary": {
+        "content": [
+          {
+            "type": "paragraph",
+            "text": "The audit does not ask whether your AI agents work. It asks whether they are traceable. Regulated enterprises that build governance into the architecture before launch reach production faster and stay compliant. Book a call at https://www.codiste.com/book-a-call.",
+            "spans": [],
+            "direction": "ltr"
+          }
+        ]
+      },
       "items": [
-        {
-          "blocks": [
-            {
-              "type": "paragraph",
-              "text": "The audit does not ask whether your AI agents work. It asks whether they are traceable. Regulated enterprises that build governance into the architecture before launch reach production faster and stay compliant. Book a call at https://www.codiste.com/book-a-call.",
-              "spans": [],
-              "direction": "ltr"
-            }
-          ]
-        }
+        {}
       ]
     }
   ]
