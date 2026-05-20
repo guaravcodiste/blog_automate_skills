@@ -19,9 +19,11 @@
   },
   "slices": [
     {
-      "id": "content$bff086cc-19f7-4d86-adae-515c4e9f9eb0",
-      "slice_type": "content",
-      "slice_label": null,
+      "variation": "default",
+      "version": "initial",
+      "items": [
+        {}
+      ],
       "primary": {
         "content": [
           {
@@ -32,14 +34,16 @@
           }
         ]
       },
-      "items": [
-        {}
-      ]
+      "id": "content$0b3b4358-f752-48c4-ab56-c14817aea238",
+      "slice_type": "content",
+      "slice_label": null
     },
     {
-      "id": "content$642dc529-6869-46e4-bdb9-1fac01b2024d",
-      "slice_type": "content",
-      "slice_label": null,
+      "variation": "default",
+      "version": "initial",
+      "items": [
+        {}
+      ],
       "primary": {
         "content": [
           {
@@ -56,14 +60,16 @@
           }
         ]
       },
-      "items": [
-        {}
-      ]
+      "id": "content$dea5a56d-48d1-4403-b345-93ffd425f586",
+      "slice_type": "content",
+      "slice_label": null
     },
     {
-      "id": "content$19c9d21b-77f7-4553-904b-93e3b0173a18",
-      "slice_type": "content",
-      "slice_label": null,
+      "variation": "default",
+      "version": "initial",
+      "items": [
+        {}
+      ],
       "primary": {
         "content": [
           {
@@ -81,14 +87,16 @@
           }
         ]
       },
-      "items": [
-        {}
-      ]
+      "id": "content$bc4b2f2c-5f8b-4687-addc-988f596a79ba",
+      "slice_type": "content",
+      "slice_label": null
     },
     {
-      "id": "content$a1a034f5-59e7-4a9a-b4b6-93d9273997c5",
-      "slice_type": "content",
-      "slice_label": null,
+      "variation": "default",
+      "version": "initial",
+      "items": [
+        {}
+      ],
       "primary": {
         "content": [
           {
@@ -117,14 +125,16 @@
           }
         ]
       },
-      "items": [
-        {}
-      ]
+      "id": "content$ae9042e6-b15c-486e-be93-1401581914e0",
+      "slice_type": "content",
+      "slice_label": null
     },
     {
-      "id": "content$32d2378e-d7b2-4edf-beb7-2c6b7a5f24dc",
-      "slice_type": "content",
-      "slice_label": null,
+      "variation": "default",
+      "version": "initial",
+      "items": [
+        {}
+      ],
       "primary": {
         "content": [
           {
@@ -142,14 +152,16 @@
           }
         ]
       },
-      "items": [
-        {}
-      ]
+      "id": "content$332e87f2-ed23-41ad-a82c-d680cfb57407",
+      "slice_type": "content",
+      "slice_label": null
     },
     {
-      "id": "content$43cb273a-6e7c-4db9-b9e0-370d77b6dccb",
-      "slice_type": "content",
-      "slice_label": null,
+      "variation": "default",
+      "version": "initial",
+      "items": [
+        {}
+      ],
       "primary": {
         "content": [
           {
@@ -208,14 +220,16 @@
           }
         ]
       },
-      "items": [
-        {}
-      ]
+      "id": "content$bc6b5e31-b832-4089-8f40-12309ca99c0d",
+      "slice_type": "content",
+      "slice_label": null
     },
     {
-      "id": "content$9c12457b-8660-47ee-bbbb-ca9ce47d3caa",
-      "slice_type": "content",
-      "slice_label": null,
+      "variation": "default",
+      "version": "initial",
+      "items": [
+        {}
+      ],
       "primary": {
         "content": [
           {
@@ -233,14 +247,16 @@
           }
         ]
       },
-      "items": [
-        {}
-      ]
+      "id": "content$a6c23ee8-d46c-48a1-9cea-69c5636bc57d",
+      "slice_type": "content",
+      "slice_label": null
     },
     {
-      "id": "content$6e98a81b-a938-4978-a671-4c23d67cb96a",
-      "slice_type": "content",
-      "slice_label": null,
+      "variation": "default",
+      "version": "initial",
+      "items": [
+        {}
+      ],
       "primary": {
         "content": [
           {
@@ -329,14 +345,16 @@
           }
         ]
       },
-      "items": [
-        {}
-      ]
+      "id": "content$b48a44b1-7007-4b4f-b640-0bd45152148e",
+      "slice_type": "content",
+      "slice_label": null
     },
     {
-      "id": "content$833abc35-a49e-49d5-9fa7-3390c3f5ffc4",
-      "slice_type": "content",
-      "slice_label": null,
+      "variation": "default",
+      "version": "initial",
+      "items": [
+        {}
+      ],
       "primary": {
         "content": [
           {
@@ -360,110 +378,264 @@
           }
         ]
       },
-      "items": [
-        {}
-      ]
+      "id": "content$caa8fa82-2683-4945-a189-4bbecbdb3413",
+      "slice_type": "content",
+      "slice_label": null
     },
     {
-      "id": "table$1027e725-3640-47dd-9657-8a4413ff4c93",
-      "slice_type": "table",
-      "slice_label": null,
+      "variation": "default",
+      "version": "initial",
+      "items": [],
       "primary": {
         "blog_table": {
           "content": [
-            [
-              {
-                "text": "Criteria",
-                "spans": []
-              },
-              {
-                "text": "Ad-Hoc Rollout",
-                "spans": []
-              },
-              {
-                "text": "Governed Deployment",
-                "spans": []
-              }
-            ],
-            [
-              {
-                "text": "Access Control",
-                "spans": []
-              },
-              {
-                "text": "Inherited from app layer",
-                "spans": []
-              },
-              {
-                "text": "Agent-level RBAC at instantiation",
-                "spans": []
-              }
-            ],
-            [
-              {
-                "text": "Audit Trail Format",
-                "spans": []
-              },
-              {
-                "text": "Log-level, manual parsing required",
-                "spans": []
-              },
-              {
-                "text": "Immutable, regulatory-readable",
-                "spans": []
-              }
-            ],
-            [
-              {
-                "text": "Explainability",
-                "spans": []
-              },
-              {
-                "text": "Not available by default",
-                "spans": []
-              },
-              {
-                "text": "Decision path captured per action",
-                "spans": []
-              }
-            ],
-            [
-              {
-                "text": "Compliance Readiness",
-                "spans": []
-              },
-              {
-                "text": "Post-audit remediation",
-                "spans": []
-              },
-              {
-                "text": "Built in before production launch",
-                "spans": []
-              }
-            ],
-            [
-              {
-                "text": "Second Rollout Speed",
-                "spans": []
-              },
-              {
-                "text": "Similar effort repeated",
-                "spans": []
-              },
-              {
-                "text": "58 percent faster",
-                "spans": []
-              }
-            ]
+            {
+              "key": "row-header",
+              "type": "tableRow",
+              "content": [
+                {
+                  "key": "h1",
+                  "type": "tableHeader",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "text": "Criteria",
+                      "spans": []
+                    }
+                  ]
+                },
+                {
+                  "key": "h2",
+                  "type": "tableHeader",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "text": "Ad-Hoc Rollout",
+                      "spans": []
+                    }
+                  ]
+                },
+                {
+                  "key": "h3",
+                  "type": "tableHeader",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "text": "Governed Deployment",
+                      "spans": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "key": "row-access-control",
+              "type": "tableRow",
+              "content": [
+                {
+                  "key": "c1-1",
+                  "type": "tableCell",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "text": "Access Control",
+                      "spans": []
+                    }
+                  ]
+                },
+                {
+                  "key": "c1-2",
+                  "type": "tableCell",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "text": "Inherited from app layer",
+                      "spans": []
+                    }
+                  ]
+                },
+                {
+                  "key": "c1-3",
+                  "type": "tableCell",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "text": "Agent-level RBAC at instantiation",
+                      "spans": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "key": "row-audit-trail-format",
+              "type": "tableRow",
+              "content": [
+                {
+                  "key": "c2-1",
+                  "type": "tableCell",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "text": "Audit Trail Format",
+                      "spans": []
+                    }
+                  ]
+                },
+                {
+                  "key": "c2-2",
+                  "type": "tableCell",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "text": "Log-level, manual parsing required",
+                      "spans": []
+                    }
+                  ]
+                },
+                {
+                  "key": "c2-3",
+                  "type": "tableCell",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "text": "Immutable, regulatory-readable",
+                      "spans": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "key": "row-explainability",
+              "type": "tableRow",
+              "content": [
+                {
+                  "key": "c3-1",
+                  "type": "tableCell",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "text": "Explainability",
+                      "spans": []
+                    }
+                  ]
+                },
+                {
+                  "key": "c3-2",
+                  "type": "tableCell",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "text": "Not available by default",
+                      "spans": []
+                    }
+                  ]
+                },
+                {
+                  "key": "c3-3",
+                  "type": "tableCell",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "text": "Decision path captured per action",
+                      "spans": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "key": "row-compliance-readiness",
+              "type": "tableRow",
+              "content": [
+                {
+                  "key": "c4-1",
+                  "type": "tableCell",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "text": "Compliance Readiness",
+                      "spans": []
+                    }
+                  ]
+                },
+                {
+                  "key": "c4-2",
+                  "type": "tableCell",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "text": "Post-audit remediation",
+                      "spans": []
+                    }
+                  ]
+                },
+                {
+                  "key": "c4-3",
+                  "type": "tableCell",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "text": "Built in before production launch",
+                      "spans": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "key": "row-second-rollout-speed",
+              "type": "tableRow",
+              "content": [
+                {
+                  "key": "c5-1",
+                  "type": "tableCell",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "text": "Second Rollout Speed",
+                      "spans": []
+                    }
+                  ]
+                },
+                {
+                  "key": "c5-2",
+                  "type": "tableCell",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "text": "Similar effort repeated",
+                      "spans": []
+                    }
+                  ]
+                },
+                {
+                  "key": "c5-3",
+                  "type": "tableCell",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "text": "58 percent faster",
+                      "spans": []
+                    }
+                  ]
+                }
+              ]
+            }
           ]
         }
       },
-      "items": []
+      "id": "table$76d6ef5b-f364-4cb0-aefc-652b74975c2c",
+      "slice_type": "table",
+      "slice_label": null
     },
     {
-      "id": "content$181fcc32-b461-446c-bb8f-88987618449b",
-      "slice_type": "content",
-      "slice_label": null,
+      "variation": "default",
+      "version": "initial",
+      "items": [
+        {}
+      ],
       "primary": {
         "content": [
           {
@@ -480,14 +652,16 @@
           }
         ]
       },
-      "items": [
-        {}
-      ]
+      "id": "content$542090c2-862a-4a7d-b564-38a05685b83c",
+      "slice_type": "content",
+      "slice_label": null
     },
     {
-      "id": "content$3777c119-7e0a-492c-8a49-ba722fa89b57",
-      "slice_type": "content",
-      "slice_label": null,
+      "variation": "default",
+      "version": "initial",
+      "items": [
+        {}
+      ],
       "primary": {
         "content": [
           {
@@ -505,56 +679,114 @@
           }
         ]
       },
-      "items": [
-        {}
-      ]
+      "id": "content$8f50eb53-a1ec-42a3-bb29-352d60f3d931",
+      "slice_type": "content",
+      "slice_label": null
     },
     {
-      "id": "table$3ac8b152-8e48-490b-bb80-193d4ef27efc",
-      "slice_type": "table",
-      "slice_label": null,
+      "variation": "default",
+      "version": "initial",
+      "items": [],
       "primary": {
         "blog_table": {
           "content": [
-            [
-              {
-                "text": "61%",
-                "spans": []
-              },
-              {
-                "text": "Enterprise AI incidents in regulated sectors traced to insufficient access controls at deployment (Financial Stability Board, 2025)",
-                "spans": []
-              }
-            ],
-            [
-              {
-                "text": "4.2x",
-                "spans": []
-              },
-              {
-                "text": "Higher cost of post-production governance remediation versus governance built into the architecture from the start (Gartner, 2025)",
-                "spans": []
-              }
-            ],
-            [
-              {
-                "text": "58%",
-                "spans": []
-              },
-              {
-                "text": "Faster subsequent AI agent rollouts for regulated enterprises with structured deployment playbooks (RegTech Analyst, 2025)",
-                "spans": []
-              }
-            ]
+            {
+              "key": "row-61",
+              "type": "tableRow",
+              "content": [
+                {
+                  "key": "c1-1",
+                  "type": "tableCell",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "text": "61%",
+                      "spans": []
+                    }
+                  ]
+                },
+                {
+                  "key": "c1-2",
+                  "type": "tableCell",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "text": "Enterprise AI incidents in regulated sectors traced to insufficient access controls at deployment (Financial Stability Board, 2025)",
+                      "spans": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "key": "row-42x",
+              "type": "tableRow",
+              "content": [
+                {
+                  "key": "c2-1",
+                  "type": "tableCell",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "text": "4.2x",
+                      "spans": []
+                    }
+                  ]
+                },
+                {
+                  "key": "c2-2",
+                  "type": "tableCell",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "text": "Higher cost of post-production governance remediation versus governance built into the architecture from the start (Gartner, 2025)",
+                      "spans": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "key": "row-58",
+              "type": "tableRow",
+              "content": [
+                {
+                  "key": "c3-1",
+                  "type": "tableCell",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "text": "58%",
+                      "spans": []
+                    }
+                  ]
+                },
+                {
+                  "key": "c3-2",
+                  "type": "tableCell",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "text": "Faster subsequent AI agent rollouts for regulated enterprises with structured deployment playbooks (RegTech Analyst, 2025)",
+                      "spans": []
+                    }
+                  ]
+                }
+              ]
+            }
           ]
         }
       },
-      "items": []
+      "id": "table$ea25258e-550f-449c-8c7d-166a48e2e3aa",
+      "slice_type": "table",
+      "slice_label": null
     },
     {
-      "id": "content$2ebd0682-f60a-4307-bdfb-710b098f4fe6",
-      "slice_type": "content",
-      "slice_label": null,
+      "variation": "default",
+      "version": "initial",
+      "items": [
+        {}
+      ],
       "primary": {
         "content": [
           {
@@ -565,14 +797,16 @@
           }
         ]
       },
-      "items": [
-        {}
-      ]
+      "id": "content$89b6361d-244b-4b92-95ee-1030b9b486d9",
+      "slice_type": "content",
+      "slice_label": null
     },
     {
-      "id": "content$1b6f7786-8c64-4615-aaaa-54475d237ed3",
-      "slice_type": "content",
-      "slice_label": null,
+      "variation": "default",
+      "version": "initial",
+      "items": [
+        {}
+      ],
       "primary": {
         "content": [
           {
@@ -596,14 +830,14 @@
           }
         ]
       },
-      "items": [
-        {}
-      ]
+      "id": "content$4cdaa9aa-4b2e-4b3e-aecb-7e38744bb055",
+      "slice_type": "content",
+      "slice_label": null
     },
     {
-      "id": "cta_button$71182875-12ec-478e-80c3-c55f02f580fa",
-      "slice_type": "cta_button",
-      "slice_label": null,
+      "variation": "default",
+      "version": "initial",
+      "items": [],
       "primary": {
         "title": [
           {
@@ -615,16 +849,21 @@
         ],
         "name": "Book a Call",
         "link": {
+          "link_type": "Web",
           "url": "https://www.codiste.com/book-a-call",
-          "link_type": "Web"
+          "target": "_blank"
         }
       },
-      "items": []
+      "id": "cta_button$2631d0e6-1e83-4217-8a79-2fe62fa8343f",
+      "slice_type": "cta_button",
+      "slice_label": null
     },
     {
-      "id": "content$35e375cb-60be-4a92-89e4-83d67841c00b",
-      "slice_type": "content",
-      "slice_label": null,
+      "variation": "default",
+      "version": "initial",
+      "items": [
+        {}
+      ],
       "primary": {
         "content": [
           {
@@ -642,15 +881,13 @@
           }
         ]
       },
-      "items": [
-        {}
-      ]
+      "id": "content$5352c2dd-17a4-4391-a912-094da1200db3",
+      "slice_type": "content",
+      "slice_label": null
     },
     {
-      "id": "faqs$cfaeabbb-f83d-4691-b334-a0c6460ef4fc",
-      "slice_type": "faqs",
-      "slice_label": null,
-      "primary": {},
+      "variation": "default",
+      "version": "initial",
       "items": [
         {
           "question": "What is enterprise AI agent deployment and how does it differ from standard software deployment?",
@@ -692,25 +929,42 @@
           "question": "What does agentic AI implementation consulting cover for enterprise firms?",
           "answer": "Agentic AI implementation consulting covers architecture design, governance framework selection, access control implementation, compliance validation, and change management workflow setup. Consultants also support regulatory audit documentation specific to the industry and data type involved."
         }
-      ]
+      ],
+      "primary": {},
+      "id": "faqs$1e1af8b2-51a2-4a1f-9e64-bc314a19beeb",
+      "slice_type": "faqs",
+      "slice_label": null
     },
     {
-      "id": "content$eafa14a5-4f8b-46e1-a68f-a64e4ebb6bbe",
-      "slice_type": "content",
-      "slice_label": null,
+      "variation": "default",
+      "version": "initial",
+      "items": [
+        {}
+      ],
       "primary": {
         "content": [
           {
             "type": "paragraph",
-            "text": "The audit does not ask whether your AI agents work. It asks whether they are traceable. Regulated enterprises that build governance into the architecture before launch reach production faster and stay compliant. Book a call at https://www.codiste.com/book-a-call.",
-            "spans": [],
+            "text": "The audit does not ask whether your AI agents work. It asks whether they are traceable. Regulated enterprises that build governance into the architecture before launch reach production faster and stay compliant. Book a call at codiste.com/book-a-call.",
+            "spans": [
+              {
+                "start": 212,
+                "end": 223,
+                "type": "hyperlink",
+                "data": {
+                  "link_type": "Web",
+                  "url": "https://www.codiste.com/book-a-call",
+                  "target": "_blank"
+                }
+              }
+            ],
             "direction": "ltr"
           }
         ]
       },
-      "items": [
-        {}
-      ]
+      "id": "content$efe507a9-c047-4757-b66b-d0cba1fbc0fb",
+      "slice_type": "content",
+      "slice_label": null
     }
   ]
 }

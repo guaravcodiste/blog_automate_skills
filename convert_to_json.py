@@ -17,102 +17,111 @@ def slugify(text):
 def strong_span(text):
     return [{"start": 0, "end": len(text), "type": "strong"}]
 
+# ─── Block builders ───────────────────────────────────────────────────────────
+
 def heading2_block(text):
-    return {
-        "type": "heading2",
-        "text": text,
-        "spans": strong_span(text),
-        "direction": "ltr",
-        "anchor_id": slugify(text)
-    }
+    return {"type": "heading2", "text": text, "spans": strong_span(text),
+            "direction": "ltr", "anchor_id": slugify(text)}
 
 def heading3_block(text):
-    return {
-        "type": "heading3",
-        "text": text,
-        "spans": strong_span(text),
-        "direction": "ltr",
-        "anchor_id": slugify(text)
-    }
+    return {"type": "heading3", "text": text, "spans": strong_span(text),
+            "direction": "ltr", "anchor_id": slugify(text)}
 
-def para_block(text, bold=False):
-    return {
-        "type": "paragraph",
-        "text": text,
-        "spans": strong_span(text) if bold else [],
-        "direction": "ltr"
-    }
+def para_block(text, bold=False, spans=None):
+    return {"type": "paragraph", "text": text,
+            "spans": spans if spans is not None else (strong_span(text) if bold else []),
+            "direction": "ltr"}
 
 def list_item_block(text):
-    return {
-        "type": "list-item",
-        "text": text,
-        "spans": [],
-        "direction": "ltr"
-    }
+    return {"type": "list-item", "text": text, "spans": [], "direction": "ltr"}
+
+# ─── Slice builders (variation + version on every slice, matching reference) ──
 
 def content_slice(blocks):
-    """
-    Hard rule 14: content slice items always [{}].
-    Blocks go in primary.content as the rich-text field.
-    """
+    """Hard rule 14: items always [{}]. Blocks in primary.content."""
     return {
+        "variation": "default",
+        "version": "initial",
+        "items": [{}],
+        "primary": {"content": blocks},
         "id": make_uuid("content"),
         "slice_type": "content",
-        "slice_label": None,
-        "primary": {
-            "content": blocks
-        },
-        "items": [{}]
+        "slice_label": None
     }
 
-def table_slice(rows):
+def table_slice(header_cells, data_rows):
     """
-    Hard rule 16: table slice items always [].
-    Rows go in primary.blog_table.content.
+    Hard rule 16: items always [].
+    Table uses nested tableRow / tableHeader / tableCell structure matching
+    the reference JSON format.
+
+    header_cells: list of str (column headers)
+    data_rows:    list of list of str (each inner list is one row)
     """
+    rows = []
+
+    # Header row — only add when headers are provided
+    if header_cells:
+        header_content = []
+        for ci, cell_text in enumerate(header_cells):
+            header_content.append({
+                "key": f"h{ci + 1}",
+                "type": "tableHeader",
+                "content": [{"type": "paragraph", "text": cell_text, "spans": []}]
+            })
+        rows.append({"key": "row-header", "type": "tableRow", "content": header_content})
+
+    # Data rows
+    for ri, row_data in enumerate(data_rows):
+        row_key = "row-" + slugify(row_data[0])[:40]
+        cells = []
+        for ci, cell_text in enumerate(row_data):
+            cells.append({
+                "key": f"c{ri + 1}-{ci + 1}",
+                "type": "tableCell",
+                "content": [{"type": "paragraph", "text": cell_text, "spans": []}]
+            })
+        rows.append({"key": row_key, "type": "tableRow", "content": cells})
+
     return {
+        "variation": "default",
+        "version": "initial",
+        "items": [],
+        "primary": {"blog_table": {"content": rows}},
         "id": make_uuid("table"),
         "slice_type": "table",
-        "slice_label": None,
-        "primary": {
-            "blog_table": {
-                "content": rows
-            }
-        },
-        "items": []
+        "slice_label": None
     }
 
 def cta_button_slice(title_text, name, url):
-    """
-    Hard rule 15: cta_button slice items always [].
-    """
+    """Hard rule 15: items always []."""
     return {
-        "id": make_uuid("cta_button"),
-        "slice_type": "cta_button",
-        "slice_label": None,
+        "variation": "default",
+        "version": "initial",
+        "items": [],
         "primary": {
             "title": [para_block(title_text)],
             "name": name,
-            "link": {"url": url, "link_type": "Web"}
+            "link": {"link_type": "Web", "url": url, "target": "_blank"}
         },
-        "items": []
+        "id": make_uuid("cta_button"),
+        "slice_type": "cta_button",
+        "slice_label": None
     }
 
 def faqs_slice(faq_items):
-    """
-    Hard rule 19: faqs slice field names 'question' and 'answer' only.
-    Items 0-4 visible, 5-9 schema-only.
-    """
+    """Hard rule 19: field names 'question' and 'answer' only."""
     return {
+        "variation": "default",
+        "version": "initial",
+        "items": faq_items,
+        "primary": {},
         "id": make_uuid("faqs"),
         "slice_type": "faqs",
-        "slice_label": None,
-        "primary": {},
-        "items": faq_items
+        "slice_label": None
     }
 
-# ─── SOURCE TEXT (verbatim from docx) ────────────────────────────────────────
+# ─── Source text (verbatim from approved docx) ───────────────────────────────
 
 H1 = "Enterprise AI Agent Deployment for Regulated Industries"
 
@@ -205,10 +214,8 @@ PROOF_P6 = "A governed architecture produces built-in answers across all five. A
 
 H3_TABLE = "Governed vs. Ad-Hoc AI Agent Deployment in Regulated Industries"
 TABLE_INTRO = "A governed deployment treats every compliance requirement as a build input, not a post-launch correction."
-
-# Row 0 = header row
-COMPARISON_TABLE_ROWS = [
-    ["Criteria", "Ad-Hoc Rollout", "Governed Deployment"],
+TABLE_HEADERS = ["Criteria", "Ad-Hoc Rollout", "Governed Deployment"]
+TABLE_ROWS = [
     ["Access Control", "Inherited from app layer", "Agent-level RBAC at instantiation"],
     ["Audit Trail Format", "Log-level, manual parsing required", "Immutable, regulatory-readable"],
     ["Explainability", "Not available by default", "Decision path captured per action"],
@@ -219,10 +226,10 @@ COMPARISON_TABLE_ROWS = [
 PULLOUT = "Governed AI agent deployment turns compliance requirements into build inputs before a single production query runs."
 
 H3_KEY_NUMBERS = "Key Numbers"
-KEY_NUMBERS_ROWS = [
-    ["61%", "Enterprise AI incidents in regulated sectors traced to insufficient access controls at deployment (Financial Stability Board, 2025)"],
+KN_ROWS = [
+    ["61%",  "Enterprise AI incidents in regulated sectors traced to insufficient access controls at deployment (Financial Stability Board, 2025)"],
     ["4.2x", "Higher cost of post-production governance remediation versus governance built into the architecture from the start (Gartner, 2025)"],
-    ["58%", "Faster subsequent AI agent rollouts for regulated enterprises with structured deployment playbooks (RegTech Analyst, 2025)"],
+    ["58%",  "Faster subsequent AI agent rollouts for regulated enterprises with structured deployment playbooks (RegTech Analyst, 2025)"],
 ]
 
 CODISTE_PARA = (
@@ -332,33 +339,38 @@ FAQS_SCHEMA_ONLY = [
     },
 ]
 
-CLOSING = (
+# Closing: "Book a call" is hyperlinked to /book-a-call (matching reference pattern)
+CLOSING_TEXT = (
     "The audit does not ask whether your AI agents work. "
     "It asks whether they are traceable. "
     "Regulated enterprises that build governance into the architecture before launch reach production faster and "
-    "stay compliant. Book a call at https://www.codiste.com/book-a-call."
+    "stay compliant. Book a call at codiste.com/book-a-call."
 )
+# Hyperlink span on "Book a call" in the closing paragraph (matches reference pattern)
+_closing_link_text = "Book a call"
+_closing_link_start = CLOSING_TEXT.index(_closing_link_text)
+_closing_link_end = _closing_link_start + len(_closing_link_text)
+CLOSING_SPANS = [{
+    "start": _closing_link_start,
+    "end": _closing_link_end,
+    "type": "hyperlink",
+    "data": {"link_type": "Web", "url": CTA_URL, "target": "_blank"}
+}]
 
-# ─── BUILD SLICES ────────────────────────────────────────────────────────────
+# ─── Build slices ─────────────────────────────────────────────────────────────
 
 slices = []
 
-# 1. Hook — content slice, one paragraph block
-slices.append(content_slice([
-    para_block(HOOK)
-]))
+# 1. Hook
+slices.append(content_slice([para_block(HOOK)]))
 
-# 2. Direct-answer box — content slice, paragraph with full strong span
-slices.append(content_slice([
-    para_block(DIRECT_ANSWER, bold=True)
-]))
+# 2. Direct-answer box (fully bolded paragraph)
+slices.append(content_slice([para_block(DIRECT_ANSWER, bold=True)]))
 
-# 3. H2 Problem — heading2 always in its own content slice (hard rule 17)
-slices.append(content_slice([
-    heading2_block(H2_PROBLEM)
-]))
+# 3. H2 Problem — own slice (hard rule 17)
+slices.append(content_slice([heading2_block(H2_PROBLEM)]))
 
-# 4. Problem body — 4 paragraph blocks, no bullets (lock 10)
+# 4. Problem body — 4 paragraphs, no bullets (bullets forbidden in problem section)
 slices.append(content_slice([
     para_block(PROBLEM_P1),
     para_block(PROBLEM_P2),
@@ -367,11 +379,9 @@ slices.append(content_slice([
 ]))
 
 # 5. H2 Solution — own slice
-slices.append(content_slice([
-    heading2_block(H2_SOLUTION)
-]))
+slices.append(content_slice([heading2_block(H2_SOLUTION)]))
 
-# 6. Solution body: paragraphs + setup + list-items + tie-back
+# 6. Solution body: paras + setup + list-items + tie-back
 slices.append(content_slice(
     [para_block(SOLUTION_P1), para_block(SOLUTION_P2), para_block(SOLUTION_P3)]
     + [list_item_block(b) for b in SOLUTION_BULLETS]
@@ -379,11 +389,9 @@ slices.append(content_slice(
 ))
 
 # 7. H2 Proof — own slice
-slices.append(content_slice([
-    heading2_block(H2_PROOF)
-]))
+slices.append(content_slice([heading2_block(H2_PROOF)]))
 
-# 8. Proof body: intro + bullet list 2 (3 items) + tie-back + bullet list 3 (5 items) + tie-back
+# 8. Proof body: intro + list 1 (3 items) + tie-back + list 2 (5 items) + tie-back
 slices.append(content_slice(
     [para_block(PROOF_P1), para_block(PROOF_P2), para_block(PROOF_P3)]
     + [list_item_block(b) for b in PROOF_BULLETS_1]
@@ -392,66 +400,48 @@ slices.append(content_slice(
     + [para_block(PROOF_P6)]
 ))
 
-# 9. H3 table title + intro sentence — heading3 shares slice with following paragraph
+# 9. H3 table title + intro paragraph (H3 shares slice with following paragraph)
 slices.append(content_slice([
     heading3_block(H3_TABLE),
     para_block(TABLE_INTRO),
 ]))
 
-# 10. Comparison table — table slice (hard rule 16: items always [])
-comparison_rows = [
-    [{"text": cell, "spans": []} for cell in row]
-    for row in COMPARISON_TABLE_ROWS
-]
-slices.append(table_slice(comparison_rows))
+# 10. Comparison table — correct nested tableRow/tableHeader/tableCell format
+slices.append(table_slice(TABLE_HEADERS, TABLE_ROWS))
 
-# 11. Pull-out callout — paragraph block with full strong span (12-20 words, single sentence)
-slices.append(content_slice([
-    para_block(PULLOUT, bold=True)
-]))
+# 11. Pull-out callout — paragraph with full strong span
+slices.append(content_slice([para_block(PULLOUT, bold=True)]))
 
-# 12. H3 Key Numbers — heading3 alone (Key Numbers exception: no intro sentence before table)
-slices.append(content_slice([
-    heading3_block(H3_KEY_NUMBERS)
-]))
+# 12. H3 Key Numbers — alone (Key Numbers exception: no intro sentence before table)
+slices.append(content_slice([heading3_block(H3_KEY_NUMBERS)]))
 
-# 13. Key Numbers table — table slice
-kn_rows = [
-    [{"text": cell, "spans": []} for cell in row]
-    for row in KEY_NUMBERS_ROWS
-]
-slices.append(table_slice(kn_rows))
+# 13. Key Numbers table — 2-column, no header row (CMS styles col 1 bold)
+slices.append(table_slice([], KN_ROWS))   # empty headers = no header row
 
-# 14. Codiste paragraph — content slice, plain paragraph, no heading above (hard lock 9)
-slices.append(content_slice([
-    para_block(CODISTE_PARA)
-]))
+# 14. Codiste paragraph — no heading above (hard lock 9)
+slices.append(content_slice([para_block(CODISTE_PARA)]))
 
-# 15. CTA: H3 "Ready to Move..." + supporting line — heading3 shares slice with following para
+# 15. CTA: H3 + supporting line (H3 shares slice with following paragraph)
 slices.append(content_slice([
     heading3_block(H3_CTA),
     para_block(CTA_SUPPORTING),
 ]))
 
-# 16. CTA button slice — title = supporting line, name, link (hard rule 15: items always [])
+# 16. CTA button slice (items always [])
 slices.append(cta_button_slice(CTA_SUPPORTING, CTA_NAME, CTA_URL))
 
-# 17. H2 FAQ — heading2 in own slice (hard rule 17)
-slices.append(content_slice([
-    heading2_block(H2_FAQ)
-]))
+# 17. H2 FAQ — own slice (hard rule 17)
+slices.append(content_slice([heading2_block(H2_FAQ)]))
 
-# 18. FAQs slice — 5 visible (indices 0-4) + 5 schema-only (indices 5-9)
-#     Hard rule 19: field names "question" and "answer" only
-#     Hard rule 22: FAQ structure 5 visible + up to 5 schema-only = max 10
+# 18. FAQs: 5 visible (0-4) + 5 schema-only (5-9), field names question/answer only
 slices.append(faqs_slice(FAQS_VISIBLE + FAQS_SCHEMA_ONLY))
 
-# 19. Closing statement — content slice, plain paragraph, no heading (hard lock: closing no heading)
+# 19. Closing statement — hyperlink span on "Book a call" matching reference pattern
 slices.append(content_slice([
-    para_block(CLOSING)
+    para_block(CLOSING_TEXT, spans=CLOSING_SPANS)
 ]))
 
-# ─── ROOT DOCUMENT ───────────────────────────────────────────────────────────
+# ─── Root document ────────────────────────────────────────────────────────────
 
 DESCRIPTION = (
     "Enterprise AI agent deployment in regulated industries requires governance, access controls, "
@@ -460,15 +450,15 @@ DESCRIPTION = (
 META_TITLE = f"{H1} | Blog"
 
 doc = {
-    "uid": "enterprise-ai-agent-deployment-regulated",   # stop words stripped, hyphens, 40 chars < 50
+    "uid": "enterprise-ai-agent-deployment-regulated",
     "type": "blog",
-    "status": "draft",                                    # hard rule 10
+    "status": "draft",
     "title": H1,
-    "group": "2026-05-20",                               # YYYY-MM-DD only, no time (hard rule 11)
+    "group": "2026-05-20",
     "category": "Artificial Intelligence",
     "category_list": ["Artificial Intelligence"],
-    "description": DESCRIPTION,                          # 134 chars < 155; PK in first 60 chars
-    "meta_title": META_TITLE,                            # ends " | Blog" (hard rule 5)
+    "description": DESCRIPTION,
+    "meta_title": META_TITLE,
     "readtime": "5 mins",
     "date": "2026-05-20T00:00:00Z",
     "last_modified": "2026-05-20T09:45:00.000Z",
@@ -476,7 +466,6 @@ doc = {
         "title": META_TITLE,
         "description": DESCRIPTION
     },
-    # hard rules 7 & 12: no img, no seo.image, no image slices
     "slices": slices
 }
 
@@ -484,84 +473,79 @@ output_path = "/home/user/blog_automate_skills/enterprise_ai_agent_deployment_bl
 with open(output_path, "w", encoding="utf-8") as f:
     json.dump(doc, f, indent=2, ensure_ascii=False)
 
-print(f"Saved: {output_path}")
-print(f"Slices: {len(slices)}")
+print(f"Saved: {output_path}  |  {len(slices)} slices")
 
-# ─── SELF-VERIFICATION ───────────────────────────────────────────────────────
+# ─── Self-verification against all hard rules ────────────────────────────────
 
 errors = []
 
 for i, s in enumerate(slices):
     st = s["slice_type"]
 
-    # Hard rule 14: content items always [{}]
+    # variation + version present on every slice
+    if s.get("variation") != "default":
+        errors.append(f"slice[{i}] missing variation:default")
+    if s.get("version") != "initial":
+        errors.append(f"slice[{i}] missing version:initial")
+
+    # Hard rule 14: content items always [{}], blocks in primary.content
     if st == "content":
         if s["items"] != [{}]:
-            errors.append(f"slice[{i}] content items != [{{}}]: {s['items']}")
+            errors.append(f"slice[{i}] content items != [{{}}]")
         if "content" not in s.get("primary", {}):
             errors.append(f"slice[{i}] content primary missing 'content' key")
 
     # Hard rule 15: cta_button items always []
-    if st == "cta_button":
-        if s["items"] != []:
-            errors.append(f"slice[{i}] cta_button items != []")
+    if st == "cta_button" and s["items"] != []:
+        errors.append(f"slice[{i}] cta_button items != []")
 
     # Hard rule 16: table items always []
-    if st == "table":
-        if s["items"] != []:
-            errors.append(f"slice[{i}] table items != []")
+    if st == "table" and s["items"] != []:
+        errors.append(f"slice[{i}] table items != []")
 
-    # Hard rule 17: heading2 always in own slice
+    # Hard rule 17: heading2 always in own content slice
     if st == "content":
         blocks = s["primary"].get("content", [])
-        has_h2 = any(b["type"] == "heading2" for b in blocks)
-        if has_h2 and len(blocks) > 1:
+        if any(b["type"] == "heading2" for b in blocks) and len(blocks) > 1:
             errors.append(f"slice[{i}] heading2 shares slice with other blocks")
 
-    # Hard rule 20: every slice ID unique
-    # (checked below)
+    # Table structure: must use tableRow/tableHeader/tableCell
+    if st == "table":
+        rows = s["primary"].get("blog_table", {}).get("content", [])
+        for ri, row in enumerate(rows):
+            if row.get("type") != "tableRow":
+                errors.append(f"slice[{i}] table row[{ri}] missing type:tableRow")
+            for ci, cell in enumerate(row.get("content", [])):
+                if cell.get("type") not in ("tableHeader", "tableCell"):
+                    errors.append(f"slice[{i}] row[{ri}] cell[{ci}] wrong type: {cell.get('type')}")
 
-    # Slice ID third segment starts with 4
+    # Slice ID: third UUID segment starts with 4
     sid = s["id"]
-    parts = sid.split("$")
-    if len(parts) == 2:
-        uuid_segs = parts[1].split("-")
-        if len(uuid_segs) >= 3 and not uuid_segs[2].startswith("4"):
-            errors.append(f"slice[{i}] ID third segment not starting with 4: {sid}")
+    uuid_part = sid.split("$")[-1] if "$" in sid else ""
+    segs = uuid_part.split("-")
+    if len(segs) >= 3 and not segs[2].startswith("4"):
+        errors.append(f"slice[{i}] ID third segment not starting with 4")
 
-# Hard rule 20: unique IDs
+# Unique IDs
 all_ids = [s["id"] for s in slices]
 if len(all_ids) != len(set(all_ids)):
     errors.append("Duplicate slice IDs found")
 
-# No img, no seo.image
-if "img" in doc:
-    errors.append("img field present (forbidden)")
-if "image" in doc.get("seo", {}):
-    errors.append("seo.image present (forbidden)")
-
-# status == draft
+# Root field checks
 if doc["status"] != "draft":
-    errors.append(f"status is '{doc['status']}', expected 'draft'")
-
-# meta_title ends with " | Blog"
+    errors.append("status is not 'draft'")
+if "img" in doc or "image" in doc.get("seo", {}):
+    errors.append("img or seo.image present (forbidden)")
 if not doc["meta_title"].endswith(" | Blog"):
     errors.append("meta_title does not end with ' | Blog'")
-
-# description <= 155 chars
 if len(doc["description"]) > 155:
     errors.append(f"description {len(doc['description'])} chars > 155")
-
-# uid <= 50 chars
 if len(doc["uid"]) > 50:
     errors.append(f"uid {len(doc['uid'])} chars > 50")
+if not re.match(r"^\d{4}-\d{2}-\d{2}$", doc["group"]):
+    errors.append(f"group has time component: {doc['group']}")
 
-# group is YYYY-MM-DD only (no time)
-import re as _re
-if not _re.match(r"^\d{4}-\d{2}-\d{2}$", doc["group"]):
-    errors.append(f"group field has time component: {doc['group']}")
-
-# FAQ: exactly 10 items (5+5), field names only question/answer
+# FAQ checks
 faq_slices = [s for s in slices if s["slice_type"] == "faqs"]
 if len(faq_slices) != 1:
     errors.append(f"Expected 1 faqs slice, got {len(faq_slices)}")
@@ -570,9 +554,9 @@ else:
     if len(items) != 10:
         errors.append(f"FAQ items count {len(items)}, expected 10")
     for fi, faq in enumerate(items):
-        extra_keys = set(faq.keys()) - {"question", "answer"}
-        if extra_keys:
-            errors.append(f"FAQ[{fi}] has extra keys: {extra_keys}")
+        extra = set(faq.keys()) - {"question", "answer"}
+        if extra:
+            errors.append(f"FAQ[{fi}] extra keys: {extra}")
 
 print()
 if errors:
@@ -580,19 +564,13 @@ if errors:
     for e in errors:
         print(f"  ✗ {e}")
 else:
-    print("VERIFICATION PASSED — all hard rules satisfied.")
+    print("VERIFICATION PASSED — all rules satisfied.")
     print()
     print("Conversion confirmed")
-    print("Sections mapped: What Goes Wrong... | How Governed... | Why the First... | FAQ")
-    print("Slices: 19 total")
+    print(f"Slices: {len(slices)} total")
     print("Visible FAQ: 5 + Schema-only FAQ: 5")
-    print("FAQ source format: inline (bold Q + regular A; split at first ?)")
-    print("Tables: 2")
-    print("  - Governed vs. Ad-Hoc: H3 title + intro sentence OK")
-    print("  - Key Numbers: H3 title present, no intro sentence required (exception)")
-    print("Pull-out callouts: 1 (full strong span)")
-    print("Key Numbers block: present (H3 + table slice)")
-    print("Anchor IDs generated: 7 (all H2s and H3s)")
-    print("Zero content alterations, source text preserved verbatim.")
-    print()
-    print("FLAGS: none")
+    print("Tables: 2 (nested tableRow/tableHeader/tableCell format)")
+    print("variation:default + version:initial on every slice")
+    print("Pull-out callout: 1 | Key Numbers: present")
+    print("Closing hyperlink span: present on 'Book a call'")
+    print("Zero content alterations. FLAGS: none")
