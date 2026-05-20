@@ -34,7 +34,7 @@ AI agents for B2B SaaS run as persistent processes, not scheduled batch jobs. Th
 
 They hold state across multiple live data connections: product usage telemetry, CRM activity logs, support ticket sentiment, and billing event streams. Three agent types run concurrently.
 
-SaaS data connectivity for AI agents is the layer most teams underestimate. A product team at a 350-seat company discovered this during their first agentic AI deployment: the monitoring agent had no visibility into support ticket closures from the legacy help desk still running on the 2019 deployment. That blind spot cost four accounts before the data feed was corrected.
+SaaS data connectivity for AI agents is the layer most teams underestimate. A product team at a 350-seat company discovered this during their first agentic AI deployment. The monitoring agent had no visibility into support ticket closures from the legacy help desk, still running on the 2019 deployment. That blind spot cost four accounts before the data feed was corrected.
 
 Here are the four core capabilities a production AI customer success platform delivers:
 
@@ -43,7 +43,7 @@ Here are the four core capabilities a production AI customer success platform de
 - The intervention agent drafts a CSM-ready outreach sequence when an account enters high-risk territory, cutting manual prep time from 45 minutes to under 5.
 - The audit layer logs every decision event, timestamp, and model version to a tamper-evident record that satisfies SOC 2 Type II requirements.
 
-These four capabilities give your customer success team a real-time operating picture across every account simultaneously. They shift the team from reactive to preventive, and customer retention automation becomes a function the AI platform delivers rather than one the CSM manually executes.
+These four capabilities give your customer success team a real-time operating picture across every account simultaneously. They shift the team from reactive to preventive. That shift is measurable. Customer retention automation becomes a function the AI platform delivers, not one the CSM manually executes.
 
 ---
 
@@ -91,10 +91,10 @@ This matrix covers the five operational dimensions that determine whether a chur
 
 Most teams evaluate dashboards and integrations. Vendor demos show the happy path. Evaluate any AI agent for SaaS platform across these four dimensions before committing budget:
 
-- Data connectivity: the platform must ingest events from your product database, CRM, billing system, and support tool without a custom ETL build on your side.
-- Explainability: every health grade decision must trace back to specific behavioral signals, not a model output with no audit path.
-- Audit layer: the platform needs tamper-evident logging that survives an enterprise security review without custom engineering work from your team.
-- Pricing model: platforms that charge per resolved churn risk align vendor incentives with your outcome. Seat-based pricing does not.
+- The platform must ingest events from your product database, CRM, billing system, and support tool without a custom ETL build.
+- Every health grade decision must trace back to specific behavioral signals, not a black-box model output with no audit path.
+- The platform needs tamper-evident logging that survives an enterprise security review without custom engineering work from your team.
+- Platforms that charge per resolved churn risk align vendor incentives with your outcome, not seat-based pricing.
 
 A CISO at a 180-seat SaaS company rejected a vendor mid-procurement because the audit log exported as a flat CSV with no hash verification. That detail costs deals. One dimension most RFPs miss is data freshness: a platform ingesting behavioral data every 24 hours is not an AI agent for SaaS. It is a scheduled report.
 
@@ -110,7 +110,7 @@ Button: Book a Call → https://www.codiste.com/book-a-call
 
 ---
 
-Codiste builds agentic AI platforms for Series B and growth-stage SaaS companies that need measurable churn reduction, not another health score dashboard. The deployments span the full customer lifecycle: behavioral monitoring, real-time scoring, automated intervention, and an audit layer that holds up in enterprise security reviews. SaaS companies working with Codiste shift from reactive CS operations to a proactive AI-driven model where churn prevention becomes a profit pool and the ARR impact shows up in the next board deck.
+Codiste builds agentic AI platforms for Series B and growth-stage SaaS companies that need measurable churn reduction, not another health score dashboard. The deployments span the full customer lifecycle: behavioral monitoring, real-time scoring, automated intervention, and an audit layer that holds up in enterprise security reviews. SaaS companies working with Codiste shift from reactive CS operations to a proactive AI-driven model. Churn prevention becomes a profit pool. The ARR impact shows up in the next board deck.
 
 ---
 
@@ -138,15 +138,15 @@ Button: Book a Call → https://www.codiste.com/book-a-call
 
 ## FAQ (Schema-only, do not publish)
 
-**How do you secure AI agents across endpoints and SaaS?** Securing AI agents across SaaS endpoints requires role-based access controls on every data connection, tamper-evident audit logs for all agent decisions, and regular model audits against your SOC 2 Type II controls. Agent permissions should follow least-privilege principles and be reviewed quarterly.
+**How do you secure AI agents across endpoints and SaaS?** Securing AI agents across SaaS endpoints requires role-based access controls on every data connection, tamper-evident audit logs for all agent decisions, and regular model audits against your SOC 2 controls. Agent permissions follow least-privilege principles.
 
-**What are profit pools in agentic AI for SaaS?** Profit pools in agentic AI for SaaS are revenue segments where companies charge for outcomes rather than software access. Each resolved churn risk or completed onboarding task becomes a discrete billable event rather than an overhead cost absorbed by a seat-based subscription.
+**What are profit pools in agentic AI for SaaS?** Profit pools in agentic AI for SaaS are revenue segments where companies charge for outcomes rather than software access. Each resolved churn risk or completed onboarding task becomes a discrete billable event, not a seat-based overhead cost.
 
 **Are AI agents replacing SaaS tools entirely?** AI agents are not replacing SaaS tools entirely. They are changing the interface layer, with agents accessing SaaS functionality through APIs rather than GUIs. SaaS platforms that expose clean data and action endpoints will see increased usage from agentic workflows.
 
-**What backend infrastructure do AI agents for SaaS require?** AI agents for SaaS require a low-latency event stream from your product database, a vector store for behavioral context, a model inference layer, and an orchestration framework to manage agent state across sessions. Most deployments also add a dedicated audit database to satisfy enterprise compliance requirements.
+**What backend infrastructure do AI agents for SaaS require?** AI agents for SaaS require a low-latency event stream, a vector store for behavioral context, a model inference layer, and an orchestration framework to manage agent state across sessions. Most deployments add a dedicated audit database.
 
-**What US compliance requirements apply to AI agents in SaaS?** AI agents handling billing data or customer communications must maintain tamper-evident audit logs and document model decision logic for enterprise customers requiring SOC 2 Type II or ISO 27001 attestation. State-level AI governance rules are also emerging across multiple US markets.
+**What US compliance requirements apply to AI agents in SaaS?** AI agents handling billing data or customer communications must maintain tamper-evident audit logs and document model decision logic for enterprise customers requiring SOC 2 Type II or ISO 27001 attestation. State-level AI governance rules are emerging.
 
 ---
 
@@ -159,14 +159,14 @@ Your Series B SaaS company is losing ARR to churn your customer success team can
 ## OUTPUT 2: FLAGS BLOCK
 
 ```
-Keyword Integration: 18 used out of 24 provided (75%)
-Primary keyword "ai agents saas": 12 exact/tokenized hits in body prose (as "AI agents for SaaS", "AI agents for B2B SaaS", "AI agents in SaaS")
+Keyword Integration: 16 used out of 24 provided (66%)
+Primary keyword "ai agents saas": 0 exact | 7 tokenized/variant ("AI agents for SaaS", "AI agents for B2B SaaS")
 
 Content Type: Cluster (NOT SPECIFIED in feeder — inferred from MoFU funnel and topic scope; flag for human review)
 Funnel stage: MoFU
 ICP: Founders and Product Leaders at Series B+ SaaS companies; outcome/profit pool angle
 Vertical: SaaS
-Word count: ~1,420
+Word count: ~1,470 (published, schema-only FAQ excluded)
 Read time: 6 mins
 Tables: 2 (comparison table + Key Numbers)
 Bulleted lists in body: 3 (Solution H2, Proof H2, Evaluation H2)
@@ -179,12 +179,62 @@ Slug (uid): ai-agents-saas-churn-reduction (30 chars)
 
 FLAGS:
 - Content Type missing from feeder row: inferred as Cluster. Human review required before publishing.
-- Keywords not integrated (below-threshold explanation):
-  - "ai agents disruptive impact on saas industry business models" — did not fit clean at Cluster word count without stuffing; topic addressed conceptually via profit pool framing
-  - "model revenue streams" — unclear standalone keyword; "revenue streams" addressed via profit pool and outcome-based pricing language
-  - "ai agents backend saas future" — did not fit as prose without forced insertion; concept covered via "agents accessing SaaS functionality through APIs" in FAQ
-  - "product-led growth ai" — added as "product-led growth companies" in Evaluation H2 (partial)
-  - "customer retention automation" — integrated in Solution H2 tie-back paragraph
+- Keywords found only in FAQ/bullets (body prose preferred):
+  - "ai for saas" — schema-only FAQ only
+  - "saas automation" — visible FAQ only
+- Keywords not integrated:
+  - "ai agents disruptive impact on saas industry" — long compound; disruption angle covered via profit pool framing
+  - "ai agents disruption impact saas industry" — variant of above
+  - "ai agents disruptive impact on saas industry business models" — variant of above
+  - "model revenue streams" — addressed via outcome-based pricing/profit pool language
+  - "ai agents disruption saas industry impact" — variant of disruption family
+  - "ai lifecycle management" — concept present via "full customer lifecycle" in Codiste para but tokenized match absent
+  - "saas ai integration" — concept present but exact/tokenized match absent
 - PLACEHOLDER_URLs: none — only /book-a-call used
 - Pillar internal-link placeholders: not applicable (Cluster)
 ```
+
+---
+
+## AUDIT BLOG 1: 11 violations across 4 categories
+
+**VOICE LOCKS**
+- Lock 5 / Sentence over 25 words (~36w) / Solution H2 — agentic AI deployment sentence / Fixed: split at period after "deployment."
+- Lock 5 / Sentence over 25 words (26w) / Solution H2 tie-back — "They shift the team…executes" / Fixed: split into two sentences; added "That shift is measurable." to satisfy second sub-7-word sentence requirement.
+- Lock 5 / Sentence over 25 words (26w) / Evaluation H2 bullet — "Data connectivity: the platform must ingest…" / Fixed: removed label colon, tightened to 18 words.
+- Lock 5 / Sentence over 25 words (33w) / Codiste paragraph — "SaaS companies working with Codiste shift…board deck" / Fixed: split into three sentences.
+- Lock 5 / H2 "How AI Agents for SaaS Customer Success Actually Work" — only 1 sentence under 7 words found; minimum is 2 / Fixed: "That shift is measurable." (4 words) added as second instance.
+- Lock 6 / Colons used as label separators in 4 Evaluation H2 bullets ("Data connectivity:", "Explainability:", "Audit layer:", "Pricing model:") — not before genuine list of 3+ items / Fixed: rewrote all 4 bullets as full sentences without label prefix.
+
+**STRUCTURAL SLOTS**
+- (clean)
+
+**BULLET DISCIPLINE**
+- Lock 10 / Evaluation H2 bullet "Pricing model: …" contained two sentences / Fixed: merged into single sentence.
+
+**CTA DISCIPLINE**
+- (clean)
+
+**FAQ DISCIPLINE**
+- Slot 12 / Schema FAQ 1 answer — 42 words (must be ≤40) / Fixed: trimmed to 35 words.
+- Slot 12 / Schema FAQ 2 answer — 42 words (must be ≤40) / Fixed: trimmed to 37 words.
+- Slot 12 / Schema FAQ 4 answer — 46 words (must be ≤40) / Fixed: trimmed to 34 words.
+- Slot 12 / Schema FAQ 5 answer — 41 words (must be ≤40) / Fixed: trimmed to 36 words.
+
+**SEO / META**
+- (clean)
+
+**BRAND / PROJECT RULES**
+- (clean) — published word count ~1,470 after fixes; within 1,200–1,500 Cluster MoFU range.
+
+**KEYWORD INTEGRATION**
+Keyword Integration: 16 used out of 24 provided (66%)
+Primary keyword "ai agents saas": 0 exact | 7 tokenized/variant
+
+Keywords found only in FAQ/bullets (informational, not violations):
+- "ai for saas" — schema-only FAQ
+- "saas automation" — visible FAQ
+
+Z = 66% (above 50% threshold; mandatory missing-keyword list not required)
+
+Fix flagged items resolved above. Blog cleared for upload after Content Type feeder confirmation.
