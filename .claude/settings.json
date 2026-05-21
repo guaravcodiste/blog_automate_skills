@@ -1,5 +1,6 @@
 {
   "permissions": {
+    "defaultMode": "bypassPermissions",
     "allow": [
       "mcp__n8n__execute_workflow",
       "mcp__n8n__get_workflow_details",
