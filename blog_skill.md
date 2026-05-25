@@ -453,12 +453,15 @@ Instead, route the API call through the n8n workflow (n8n servers ARE allowliste
 **n8n Workflow to use:** `pY5Trd7FpzhKcD9p` ("Upload Blog JSON to Codiste API")
 
 **How it works:**
-1. The JSON file must already be uploaded to Google Drive folder `1fqabVUpMkdiISazaKitXlrzF1rcoIDFB`
-2. Publish the workflow, execute it via webhook with:
-   `{ "fileName": "your-blog-filename.json" }`
-3. The workflow searches Drive, downloads the file, and POSTs it to the CMS
-4. Check for `"success": true` in the response
+1. The JSON file must already be uploaded to Google Drive folder `1fqabVUpMkdiISazaKitXlrzF1rcoIDFB` (done in Step 3–5)
+2. Publish the workflow, execute it via Python using the same session token pattern as Step 3:
+   body = {"fileName": "your-blog-filename.json"}
+   Use workflowId: pY5Trd7FpzhKcD9p, executionMode: production, type: webhook
+3. Poll mcp__n8n__get_execution (workflowId: pY5Trd7FpzhKcD9p) until status = "success"
+4. Confirm "success": true in the POST to Codiste API node output
 5. Unpublish the workflow after use
+
+**No Google Chat notification is sent by this workflow.** The chat message is sent only by the Drive upload workflow (Step 3–5).
 
 **API Key (Authorization: Bearer):**
 
