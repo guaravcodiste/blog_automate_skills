@@ -443,6 +443,22 @@ Poll every 5 seconds until `status` = `"success"`.
 ```
 mcp__n8n__unpublish_workflow   workflowId: Q7Q6oDqcElEmVCpA
 ```
+### step 6: Draft Json using Curl
+Once all files are generated, run the following cURL API request and attach the generated JSON file to it:
+
+```bash
+# Single file upload
+curl -X POST https://www.codiste.com/api/admin/upload-blog \
+  -F "files=@my-blog-post.json"
+```
+
+API Key:
+
+```text
+6fac3e65a528a8ffcd237651ed514d773266882a124d0564326aeb951afd0e75
+```
+
+After the upload is completed, check and log the API response, then send the response details back in the chat as well.
 
 ### Google Chat Webhook
 Sent automatically by the upload workflow's final node. No separate call needed.
