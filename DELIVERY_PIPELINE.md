@@ -81,7 +81,7 @@ mcp__Google-Drive__read_file_content
 ```
 This returns the full blog text. Use it for conversion.
 
-**If multiple topics exist, process only the first one (lowest row / oldest created date).**
+**If multiple topics exist, process ALL of them in the same run — loop through each row sequentially (lowest row number first). Skip rows where Drive file is not found and note it in the Chat notification.**
 
 ---
 
