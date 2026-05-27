@@ -25,7 +25,6 @@ These are **ACCESSIBLE**:
 | Folder | ID |
 |---|---|
 | **JsonFiles** (JSON delivery destination) | `11qhEj83s2KFxIDgcoKJnyUx9BjEEbEj9` |
-| **Blog_To_JsonFiles** (source .docx files) | `1Zu4tQpWIDsJBjC4YVHtnkzdeLeWp6M5Z` |
 | **CMS Search Root** (CMS workflow scans here) | `1fqabVUpMkdiISazaKitXlrzF1rcoIDFB` |
 
 ### n8n Workflows
@@ -34,7 +33,7 @@ These are **ACCESSIBLE**:
 | Get Blog From Drive | `jQfJBSXe75Vl5Jnx` | Manual |
 | Upload Blog JSON to Codiste CMS | `pY5Trd7FpzhKcD9p` | Webhook `{ fileName }` |
 | ~~Converted Json Blog to Drive and Draft~~ | `3QWsnlNkgDE4CupS` | ❌ Webhook blocked — not usable |
-
+    
 ### Google Chat Webhook
 ```
 https://chat.googleapis.com/v1/spaces/AAQAT72CHuU/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=Qe1ssjpk7FXlZhov6PI89T3akTY-Brg3dDBQgX8_7J8
@@ -75,11 +74,6 @@ Then poll: `mcp__n8n__get_execution` (workflowId: `jQfJBSXe75Vl5Jnx`, executionI
 `Blog_To_JsonFiles` instead of a file inside it.
 
 **Fallback (use this when workflow fails):**
-```
-mcp__Google-Drive__search_files
-  query: parentId = '1Zu4tQpWIDsJBjC4YVHtnkzdeLeWp6M5Z'
-  pageSize: 20
-```
 Find the `.docx` file, then read it:
 ```
 mcp__Google-Drive__read_file_content
